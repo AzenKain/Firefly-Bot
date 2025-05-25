@@ -1,0 +1,11 @@
+services:
+  firefly-bot:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: firefly-bot
+    networks:
+      - bot-network
+
+networks:
+  bot-network:
