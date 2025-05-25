@@ -11,6 +11,13 @@ jobs:
       - name: Check out latest code
         uses: actions/checkout@v4
 
+      - name: Create .env file from secrets
+        run: |
+          cat <<EOF > .env
+          DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }}
+          DISCORD_CLIENT_ID=${{ secrets.DISCORD_CLIENT_ID }}
+          EOF
+
       - name: Stop and remove old containers
         run: |
           docker compose down || true
