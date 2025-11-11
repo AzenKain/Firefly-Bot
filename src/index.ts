@@ -1,8 +1,8 @@
 import 'module-alias/register'
 import { Client, GatewayIntentBits, Partials } from "discord.js";
-import { config } from "./config";
-import ActiveAllEvents from "./events";
-import { ActiveAllPrefixCommands, ActiveAllSlashCommands } from "./commands";
+import { config } from "@/config";
+import ActiveAllEvents from "@/events";
+import { ActiveAllPrefixCommands, ActiveAllSlashCommands } from "@/commands";
 
 console.log("🔥 Starting bot...")
 
