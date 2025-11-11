@@ -12,7 +12,7 @@ export async function ActiveAllSlashCommands(client: Client) {
         const folderPath = path.join(commandFolder, folder);
         if (!fs.statSync(folderPath).isDirectory()) continue;
     
-        const commandFiles = fs.readdirSync(folderPath).filter(file => file.endsWith(".ts"));
+        const commandFiles = fs.readdirSync(folderPath).filter(file => file.endsWith(".ts") || file.endsWith(".js"));
         for (const file of commandFiles) {
             const command = require(path.join(folderPath, file));
             if (!command.data?.name || typeof command.execute !== "function") {

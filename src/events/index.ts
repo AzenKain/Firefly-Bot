@@ -8,7 +8,7 @@ export default function ActiveAllEvents(client: Client) {
         const folderPath = path.join(eventFolder, folder);
         if (!fs.statSync(folderPath).isDirectory()) continue;
     
-        const eventFiles = fs.readdirSync(folderPath).filter(file => file.endsWith(".ts"));
+        const eventFiles = fs.readdirSync(folderPath).filter(file => file.endsWith(".ts") || file.endsWith(".js"));
         for (const file of eventFiles) {
             const event = require(path.join(folderPath, file));
             if (!event.name || typeof event.execute !== "function") {
