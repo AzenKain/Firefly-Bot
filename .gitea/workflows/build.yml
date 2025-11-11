@@ -16,6 +16,7 @@ jobs:
           cat <<EOF > .env
           DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }}
           DISCORD_CLIENT_ID=${{ secrets.DISCORD_CLIENT_ID }}
+          DISCORD_PREFIX=f?
           EOF
 
       - name: Stop and remove old containers
